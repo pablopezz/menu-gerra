@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargando Menú...</title>
+    <script>
+        window.onload = function() {
+            // Obtener la hora actual del móvil del cliente (formato 24h)
+            var hora = new Date().getHours();
+            var destino = "";
+
+            // Lógica de franjas horarias
+            if (hora >= 8 && hora < 12) {
+                // De 08:00 a 11:59 -> Desayunos
+                destino = "desayunos.pdf"; 
+                
+            } else if (hora >= 12 && hora < 16) {
+                // De 12:00 a 15:59 -> Comidas
+                destino = "comidas.pdf";
+                
+            } else {
+                // A partir de las 16:00 y madrugada -> Tarde y Copas
+                destino = "comidas.pdf";
+            }
+
+            // Redirigir automáticamente al archivo correspondiente
+            window.location.replace(destino);
+        };
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 20%;">
+    <h2>Preparando la carta... 🍽️</h2>
+</body>
+</html>
